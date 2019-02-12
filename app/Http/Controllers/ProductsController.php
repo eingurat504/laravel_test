@@ -45,5 +45,19 @@ class ProductsController extends Controller
 
     }
 
+    /**
+     * Display products
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function products()
+    {
+
+        $products = Product::all()->paginate(10);
+
+        return view('products.create', compact('products'));
+    }
+
+
 
 }

@@ -72,5 +72,40 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">Dashboard</div>
+                @if ($products->isEmpty())
+                    <p>You have not created any tickets.</p>
+                @else
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>name</th>
+                            <th>quantity</th>
+                            <th>price</th>
+                            <th>Last Updated</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach ($products as $product)
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>{{ $product->updated_at }}</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+
+                    {{ $products->render() }}
+                @endif
+            </div>
+        </div>
     </div>
 @endsection
