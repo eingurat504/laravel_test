@@ -37,8 +37,8 @@ class ProductsController extends Controller
 
         $product = new Product();
         $product->name = $request->name;
-        $product->name = $request->quantity;
-        $product->name = $request->price;
+        $product->quantity = $request->quantity;
+        $product->price = $request->price;
         $product->save();
 
         return view('products.create');
